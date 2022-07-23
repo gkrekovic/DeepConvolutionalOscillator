@@ -1,2 +1,6 @@
-# DeepConvolutionalOscillator
-A deep learning model for synthesizing single-cycle wave-forms from timbral attributes
+# Deep Convolutional Oscillator
+This repository contains code used for a research on synthesizing single-cycle waveforms from timbral attributes. The motivation was to investigate a viable alternative to traditional wavetable oscillators with intuitive control. Based on a thorough literature review and practical considerations, we selected three attributes appropriate for describing timbral characteristics of steady and harmonic tones: bright, warm, and rich. A deep learning network was designed to map magnitudes of these attributes to single-cycle waveforms. The architecture was based on stacking of upsampling and convolutional layers to model temporal dependencies within the waveform. The network was trained on a large number of waveforms extracted from NSynth dataset. Audio features closely related to the selected attributes were used as inputs, while the custom loss function was employed to minimize the difference in normalized power spectra between outputs and training waveforms. Four models with different hyperparameters were trained and the best one was selected using the validation dataset. Further experiments with the selected model showed that synthesized waveforms generally match the input attributes well, as the mean absolute errors for normalized attributes were 0.07, 0.05, and 0.18 for bright, warm, and rich respectively on the testing dataset.
+
+# Reference
+* Kreković, Gordan. Deep Convolutional Oscillator: Synthesizing Waveforms from Timbral Descriptors. Proceedings of the 19th Sound and Music Computing Conference
+Saint-Etienne, 2022. https://zenodo.org/record/6573045
